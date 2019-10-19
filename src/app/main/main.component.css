@@ -1,0 +1,12 @@
+.main{
+    position: fixed;
+    z-index: 1;
+    /* display: none; */
+}
+
+.popup{
+    position: absolute;
+    z-index: 2;
+    display: none;
+}
+

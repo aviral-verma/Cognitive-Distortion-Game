@@ -1,0 +1,13 @@
+.options-popup-proceed button{
+    border-radius: 4px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 12px;
+    width: 85vw;
+    background-color: #0C8C95;
+    color: #fff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0);
+    margin: 15px;
+    border: 1px solid #A5A5A5;
+    flex: 1;
+}

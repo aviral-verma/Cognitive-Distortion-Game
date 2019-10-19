@@ -1,0 +1,49 @@
+{
+    "gameData" : [
+    {
+        "id": 1,
+
+        "heading" : "Silly Mistake",
+
+        "situation": "Whenever I have a meeting with my supervisor, she humiliates the hell out of me. It makes me feel like a doormat.",
+
+        "nat": "I am not worthy to be here.",
+
+        "options": ["All or None Thinking", "Jumping to conclusion", "Ignoring the positive", "Emotional Reasoning", "Labelling", "Magnification/Minimization"],
+
+        "correct": ["Emotional Reasoning", "Labelling"]
+
+    },
+
+    {
+        "id": 2,
+
+        "heading" : "No Mistake",
+        
+        "situation": "It makes me feel like a doormat whenever I have a meeting with my supervisor, she humiliates me.",
+
+        "nat": "I am indeed worthy to be here.",
+
+        "options": ["All or None Thinking", "All or None Thinking", "All or None Thinking", "All or None Thinking", "All or None Thinking", "All or None Thinking"],
+
+        "correct": ["Emotional Reasoning", "Labelling"]
+
+    },
+
+    {
+        "id": 3,
+
+        "heading" : "Bad Mistake",
+        
+        "situation": "Whenever I have a meeting with my supervisor, she humiliates the hell out of me. It makes me feel like a doormat.",
+
+        "nat": "I am not worthy to be here.",
+
+        "options": ["All or None Thinking", "Jumping to conclusion", "Ignoring the positive", "Emotional Reasoning", "Labelling", "Magnification/Minimization"],
+
+        "correct": ["Emotional Reasoning", "Labelling"]
+
+    }
+    
+]
+}

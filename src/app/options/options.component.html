@@ -1,0 +1,18 @@
+<div class="options-heading">
+<h4>Identify the Thinking Error(s)!</h4>
+</div>
+<div class="options-content">
+  <div class="group-1">
+      <a routerLink="/option-popup" routerLinkActive="active"><button style="cursor: pointer;">{{this.game[this.gameService.questionId-1].options[0]}}</button></a>
+      
+      <button>{{this.game[this.gameService.questionId-1].options[2]}}</button>
+      <button>{{this.game[this.gameService.questionId-1].options[4]}}</button>
+  </div>
+  <div class="group-2">
+      <button>{{this.game[this.gameService.questionId-1].options[1]}}</button>
+      <a routerLink="/option-popup" routerLinkActive="active"><button (click)="onOptionClick()" style="cursor: pointer;">{{this.game[this.gameService.questionId-1].options[3]}}</button></a>
+      <button>{{this.game[this.gameService.questionId-1].options[5]}}</button>
+  </div>
+  
+
+</div>

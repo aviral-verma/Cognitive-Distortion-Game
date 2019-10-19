@@ -1,0 +1,45 @@
+.home{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.home-content{
+    flex: 1;
+    width: 80vw;
+    text-align: center;
+    font-size: 12px;
+    background-color: #DFFDFF;
+    margin-top: 0;
+
+}
+
+.home-image{
+    padding-bottom: 0 !important;
+}
+.home button{
+    border-radius: 9px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 18px;
+    width: 50vw;
+    border: 1px solid #FFCA6D;
+    background-color: #FFCA6D;
+    color: #2A2A2A;
+    margin: 15px;
+    flex: 1;
+}
+
+.play button{
+    border-radius: 9px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 24px;
+    width: 70vw;
+    cursor: pointer;
+    background-color: #0C8C95;
+    color: #fff;
+    margin: 15px;
+    border: 1px solid #A5A5A5;
+    flex: 1;
+}

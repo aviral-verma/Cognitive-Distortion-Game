@@ -1,0 +1,14 @@
+<div class="heading-background">
+  <!-- remove this back button -->
+  <div class="heading-content-prev">
+    <button style="color: white;"></button>
+  </div>
+  <div class="heading-content-box">
+    <p class="heading-content">
+        {{this.game[this.gameService.questionId-1].heading}}
+    </p>
+  </div>
+  <div class="heading-content-next">
+    <button style="color: white;" (click)=onNextClick()>></button>
+  </div>
+</div>
