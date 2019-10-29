@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GameService } from '../game.service';
 
 @Component({
   selector: 'app-selected-option-content',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SelectedOptionContentComponent implements OnInit {
 
-  constructor() { }
+  message="";
+
+  constructor(private gameService: GameService) { 
+    this.message=this.gameService.optionMessage;
+  }
 
   ngOnInit() {
   }

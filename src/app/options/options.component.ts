@@ -11,10 +11,11 @@ import {MatDialog} from '@angular/material/dialog';
 export class OptionsComponent implements OnInit {
 
   game;
-  correct:string[];
+  correct;
   selectedCorrectOptionsSet;
   correctOptionsLength;
   selectedCorrectOptionsLength = 0;
+  correctOptionFound=-1;
   
 
   constructor(private gameService: GameService, public dialog: MatDialog) {
@@ -36,28 +37,46 @@ export class OptionsComponent implements OnInit {
       height: '62vh',
       width: '90vw',
 });
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
+    // dialogRef.afterClosed().subscribe(result => {
+    //   console.log(`Dialog result`);
+    // });
   }
 
-
    onOptionClick(item) {
-     this.openDialog();
-    this.correct.forEach(correctItem => {
-      if(correctItem === item)
+     this.gameService.optionSelected = item.distortion;
+     this.gameService.optionMessage=item.message;
+     this.correct.forEach(correctItem => {
+      if(correctItem.id === item.id)
       {
-        this.selectedCorrectOptionsSet.add(item);
+        this.selectedCorrectOptionsSet.add(item.id);
         this.selectedCorrectOptionsLength++;
+        this.gameService.optionStatus = "correct";
+        this.correctOptionFound=1;
+        console.log(this.gameService.optionStatus);
       }
+    });
+    if(this.correctOptionFound!=1)
+    {
+      this.gameService.optionStatus = "incorrect";
+        console.log(this.gameService.optionStatus);
+
+    }
+      
       if(this.selectedCorrectOptionsLength === this.correct.length)
       {
         this.selectedCorrectOptionsSet.clear();
         this.selectedCorrectOptionsLength = 0;
-        this.gameService.questionId++;
+        this.gameService.optionStatus = "allcorrect";
+        this.correctOptionFound=-1;
+        console.log(this.gameService.optionStatus);
+
       }
-    })
-   }
+      this.openDialog();
+      this.correctOptionFound=-1;
+
+
+    }
+   
 
   ngOnInit() {
   }
