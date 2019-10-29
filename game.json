@@ -1,49 +1,165 @@
 {
-    "gameData" : [
-    {
-        "id": 1,
+	"gameData": [{
+			"id": 1,
 
-        "heading" : "Silly Mistake",
+			"heading": "Silly Mistake",
 
-        "situation": "Whenever I have a meeting with my supervisor, she humiliates the hell out of me. It makes me feel like a doormat.",
+			"situation": "Whenever I have a meeting with my supervisor, she humiliates the hell out of me. It makes me feel like a doormat.",
 
-        "nat": "I am not worthy to be here.",
+			"nat": "I am not worthy to be here.",
 
-        "options": ["All or None Thinking", "Jumping to conclusion", "Ignoring the positive", "Emotional Reasoning", "Labelling", "Magnification/Minimization"],
+			"options": [{
+					"id": 1,
+					"distortion": "Jumping to conclusion",
+                    "message": "Jumping to conclusion help you how all this mistaken idea of denouncing pleasure and praising. All or None Thinking help you how all this mistaken idea of"
+				},
+				{
+					"id": 2,
+					"distortion": "Labelling",
+                    "message": "Labelling help you how all this mistaken idea of denouncing pleasure and praising. All or None Thinking help you how all this mistaken idea of"
+				},
+				{
+					"id": 3,
+					"distortion": "Magnification or minimization",
+                    "message": "Magnification or minimization help you how all this mistaken idea of denouncing pleasure and praising. All or None Thinking help you how all this mistaken idea of"
+				},
+				{
+					"id": 4,
+					"distortion": "All or None Thinking",
+                    "message": "All or None Thinking help you how all this mistaken idea of denouncing pleasure and praising. All or None Thinking help you how all this mistaken idea of"
+				},
+				{
+					"id": 5,
+					"distortion": "Emotional Reasoning",
+                    "message": "Emotional Reasoning help you how all this mistaken idea of denouncing pleasure and praising. All or None Thinking help you how all this mistaken idea ofe"
+				},
+				{
+					"id": 6,
+					"distortion": "Ignoring the positive",
+                    "message": "Ignoring the positive help you how all this mistaken idea of denouncing pleasure and praising. All or None Thinking help you how all this mistaken idea of"
+				}
+			],
 
-        "correct": ["Emotional Reasoning", "Labelling"]
+			"correct": [{
+					"id": 2,
+					"distortion": "Labelling",
+                    "message": "some message"
+				},
+				{
+					"id": 5,
+					"distortion": "Emotional Reasoning",
+                    "message": "some message"
+				}
+			]
+		},
 
-    },
+		{
+			"id": 2,
 
-    {
-        "id": 2,
+			"heading": "No Mistake",
 
-        "heading" : "No Mistake",
-        
-        "situation": "It makes me feel like a doormat whenever I have a meeting with my supervisor, she humiliates me.",
+			"situation": "Whenever I have a meeting with my supervisor, she humiliates the hell out of me. It makes me feel like a doormat.",
 
-        "nat": "I am indeed worthy to be here.",
+			"nat": "I am not worthy to be here.",
 
-        "options": ["All or None Thinking", "All or None Thinking", "All or None Thinking", "All or None Thinking", "All or None Thinking", "All or None Thinking"],
+			"options": [{
+					"id": 1,
+					"distortion": "Jumping to conclusion",
+                    "message": "some message"
+				},
+				{
+					"id": 2,
+					"distortion": "Labelling",
+                    "message": "some message"
+				},
+				{
+					"id": 3,
+					"distortion": "Magnification or minimization",
+                    "message": "some message"
+				},
+				{
+					"id": 4,
+					"distortion": "All or None Thinking",
+                    "message": "some message"
+				},
+				{
+					"id": 5,
+					"distortion": "Emotional Reasoning",
+                    "message": "some message"
+				},
+				{
+					"id": 6,
+					"distortion": "Ignoring the positive",
+                    "message": "some message"
+				}
+			],
 
-        "correct": ["Emotional Reasoning", "Labelling"]
+			"correct": [{
+					"id": 2,
+					"distortion": "Labelling",
+                    "message": "some message"
+				},
+				{
+					"id": 5,
+					"distortion": "Emotional Reasoning",
+                    "message": "some message"
+				}
+			]
+		},
 
-    },
+		{
+			"id": 3,
 
-    {
-        "id": 3,
+			"heading": "Silly Mistake",
 
-        "heading" : "Bad Mistake",
-        
-        "situation": "Whenever I have a meeting with my supervisor, she humiliates the hell out of me. It makes me feel like a doormat.",
+			"situation": "Whenever I have a meeting with my supervisor, she humiliates the hell out of me. It makes me feel like a doormat.",
 
-        "nat": "I am not worthy to be here.",
+			"nat": "I am not worthy to be here.",
 
-        "options": ["All or None Thinking", "Jumping to conclusion", "Ignoring the positive", "Emotional Reasoning", "Labelling", "Magnification/Minimization"],
+			"options": [{
+					"id": 1,
+					"distortion": "Jumping to conclusion",
+                    "message": "some message"
+				},
+				{
+					"id": 2,
+					"distortion": "Labelling",
+                    "message": "some message"
+				},
+				{
+					"id": 3,
+					"distortion": "Magnification or minimization",
+                    "message": "some message"
+				},
+				{
+					"id": 4,
+					"distortion": "All or None Thinking",
+                    "message": "some message"
+				},
+				{
+					"id": 5,
+					"distortion": "Emotional Reasoning",
+                    "message": "some message"
+				},
+				{
+					"id": 6,
+					"distortion": "Ignoring the positive",
+                    "message": "some message"
+				}
+			],
 
-        "correct": ["Emotional Reasoning", "Labelling"]
+			"correct": [{
+					"id": 2,
+					"distortion": "Labelling",
+                    "message": "some message"
+				},
+				{
+					"id": 5,
+					"distortion": "Emotional Reasoning",
+                    "message": "some message"
+				}
+			]
+		}
 
-    }
-    
-]
+	]
 }

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { GameService } from '../game.service';
+import {MatDialog} from '@angular/material/dialog';
+
 
 @Component({
   selector: 'app-options-popup-proceed',
@@ -6,10 +9,34 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./options-popup-proceed.component.css']
 })
 export class OptionsPopupProceedComponent implements OnInit {
+  displayButton="Default Option";
 
-  constructor() { }
+  constructor(private gameService: GameService, public dialog: MatDialog) {
+        if(this.gameService.optionStatus=="correct")
+        {
+           this.displayButton = "Find Remaining Error";
+
+        }
+        else if(this.gameService.optionStatus=="incorrect")
+        {
+           this.displayButton = "Try again";
+
+        }
+        else if(this.gameService.optionStatus=="allcorrect")
+        {
+           this.displayButton = "Next Question";
+          //  this.gameService.questionId++;
+        }
+   }
 
   ngOnInit() {
+  }
+  closePopup()
+  {
+    if(this.gameService.optionStatus=="allcorrect")
+    {
+      this.gameService.questionId++;
+    }
   }
 
 }

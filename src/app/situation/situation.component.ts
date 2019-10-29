@@ -9,9 +9,7 @@ import { Game } from '../models/game';
 })
 export class SituationComponent implements OnInit {
 
-  // game: Game;
   game;
-
 
   constructor(private gameService: GameService) {
     this.gameService.getGameData()

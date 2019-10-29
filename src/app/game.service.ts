@@ -14,7 +14,10 @@ export class GameService {
   gameUrl = 'http://localhost:3000';
 
   questionId = 1;
-
+  optionStatus = "";
+  optionSelected="";
+  optionMessage="";
+  
   getGameData() {
     return this.http.get(this.gameUrl  + '/gameData');
   }
