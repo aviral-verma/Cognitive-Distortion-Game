@@ -1,3 +1,3 @@
 # TreadwillGame
 
-This is a game that I'm builiding that would be a part of TreadWill
+This is a game that I'm building that would be a part of TreadWill
