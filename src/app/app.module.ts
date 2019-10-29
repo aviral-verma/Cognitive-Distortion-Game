@@ -8,7 +8,7 @@ import { HeadingComponent } from './heading/heading.component';
 import { SituationComponent } from './situation/situation.component';
 import { NatComponent } from './nat/nat.component';
 import { OptionsComponent } from './options/options.component';
-import { OptionPopupComponent } from './option-popup/option-popup.component';
+import { OptionPopupComponent } from './options/options.component';
 import { OptionSolutionComponent } from './option-solution/option-solution.component';
 import { SelectedOptionComponent } from './selected-option/selected-option.component';
 import { SelectedOptionContentComponent } from './selected-option-content/selected-option-content.component';
@@ -16,7 +16,9 @@ import { OptionsPopupProceedComponent } from './options-popup-proceed/options-po
 import { AllSituationsComponent } from './all-situations/all-situations.component';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
+import {MatDialogModule} from '@angular/material/dialog';
 import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 const appRoutes: Routes = [
   { path: 'all-situations', component: AllSituationsComponent },
@@ -54,6 +56,8 @@ const appRoutes: Routes = [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    BrowserAnimationsModule,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

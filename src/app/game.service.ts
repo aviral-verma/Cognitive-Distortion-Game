@@ -9,6 +9,7 @@ export class GameService {
 
   constructor(private http: HttpClient) { }
 
+  selectedCorrectOptionsSet = new Set();
 
   gameUrl = 'http://localhost:3000';
 
