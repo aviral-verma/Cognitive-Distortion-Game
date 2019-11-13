@@ -2,7 +2,7 @@
 	"gameData": [{
 			"id": 1,
 
-			"heading": "Silly Mistake",
+			"title": "Silly Mistake",
 
 			"situation": "Whenever I have a meeting with my supervisor, she humiliates the hell out of me. It makes me feel like a doormat.",
 
@@ -56,7 +56,7 @@
 		{
 			"id": 2,
 
-			"heading": "No Mistake",
+			"title": "No Mistake",
 
 			"situation": "Whenever I have a meeting with my supervisor, she humiliates the hell out of me. It makes me feel like a doormat.",
 
@@ -110,7 +110,7 @@
 		{
 			"id": 3,
 
-			"heading": "Silly Mistake",
+			"title": "Silly Mistake",
 
 			"situation": "Whenever I have a meeting with my supervisor, she humiliates the hell out of me. It makes me feel like a doormat.",
 

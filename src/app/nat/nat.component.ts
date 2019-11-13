@@ -10,15 +10,17 @@ import { Game } from '../models/game';
 export class NatComponent implements OnInit {
 
   game;
-
+  nat;
   constructor(private gameService: GameService) {
     this.gameService.getGameData()
     .subscribe((data) => 
-    this.game = data
+    {
+        this.game = data;
+        this.nat = this.game.results[gameService.questionId-1].nat
+    } 
   );
-    
-   }
-  ngOnInit() {
   }
+
+  ngOnInit() {}
 
 }

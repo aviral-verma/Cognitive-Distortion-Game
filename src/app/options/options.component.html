@@ -3,14 +3,24 @@
 </div>
 <div class="options-content">
   <div class="group-1">
-      <button (click)="onOptionClick(this.game[this.gameService.questionId-1].options[0])" style="cursor: pointer;">{{this.game[this.gameService.questionId-1].options[0].distortion}}</button>
-      
-      <button (click)="onOptionClick(this.game[this.gameService.questionId-1].options[2])" style="cursor: pointer;">{{this.game[this.gameService.questionId-1].options[2].distortion}}</button>
-      <button (click)="onOptionClick(this.game[this.gameService.questionId-1].options[4])" style="cursor: pointer;">{{this.game[this.gameService.questionId-1].options[4].distortion}}</button>
+      <button (click)="onOptionClick(gameService.optionOne)" style="cursor: pointer;">
+        {{gameService.optionOneDistortion}}</button>
+      <button (click)="onOptionClick(gameService.optionThree)" style="cursor: pointer;">
+        {{gameService.optionThreeDistortion}}
+      </button>
+      <button (click)="onOptionClick(gameService.optionFive)" style="cursor: pointer;">
+        {{gameService.optionFiveDistortion}}
+      </button>
   </div>
   <div class="group-2">
-      <button (click)="onOptionClick(this.game[this.gameService.questionId-1].options[1])" style="cursor: pointer;">{{this.game[this.gameService.questionId-1].options[1].distortion}}</button>
-      <button (click)="onOptionClick(this.game[this.gameService.questionId-1].options[3])" style="cursor: pointer;">{{this.game[this.gameService.questionId-1].options[3].distortion}}</button>
-      <button (click)="onOptionClick(this.game[this.gameService.questionId-1].options[5])" style="cursor: pointer;">{{this.game[this.gameService.questionId-1].options[5].distortion}}</button>
+      <button (click)="onOptionClick(gameService.optionTwo)" style="cursor: pointer;">
+        {{gameService.optionTwoDistortion}}
+      </button>
+      <button (click)="onOptionClick(gameService.optionFour)" style="cursor: pointer;">
+        {{gameService.optionFourDistortion}}
+      </button>
+      <button (click)="onOptionClick(gameService.optionSix)" style="cursor: pointer;">
+        {{gameService.optionThreeDistortion}}
+      </button>
   </div>
 </div>

@@ -1,6 +1,6 @@
 export interface Game {
     id: number;
-    heading: string;
+    title: string;
     situation: string;
     nat: string;
     options: string[];

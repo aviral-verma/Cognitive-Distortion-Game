@@ -19,6 +19,11 @@ import { HomeComponent } from './home/home.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CustomOverlayDirective } from './shared/custom-dialog/custom-overlay.directive';
+import { DialogContainerComponent } from './shared/custom-dialog/dialog-container/dialog-container.component';
+import { DialogBoxService } from './shared/custom-dialog/dialog-box.service';
+import { DialogBoxChildDirective } from './shared/custom-dialog/dialog-container/dialog-box-child.directive';
+import { ScoreComponent } from './score/score.component';
 
 const appRoutes: Routes = [
   { path: 'all-situations', component: AllSituationsComponent },
@@ -46,7 +51,10 @@ const appRoutes: Routes = [
     SelectedOptionContentComponent,
     OptionsPopupProceedComponent,
     AllSituationsComponent,
-    HomeComponent
+    HomeComponent,
+    DialogContainerComponent,
+    DialogBoxChildDirective,
+    ScoreComponent
   ],
   imports: [
     RouterModule.forRoot(
@@ -59,7 +67,10 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,
     MatDialogModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [DialogBoxService, OptionsComponent, HeadingComponent],
+  bootstrap: [AppComponent],
+  entryComponents: [
+    DialogContainerComponent,
+  ]
 })
 export class AppModule { }

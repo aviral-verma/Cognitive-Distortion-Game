@@ -8,6 +8,7 @@
     color: #27B535;
     margin: 20px;
     border: 1px solid #27B535;
+    outline: none;
     flex:1;
 }
 
@@ -21,5 +22,6 @@
     color: #FF6867;
     margin: 20px;
     border: 1px solid #FF6867;
+    outline: none;
     flex:1;
 }

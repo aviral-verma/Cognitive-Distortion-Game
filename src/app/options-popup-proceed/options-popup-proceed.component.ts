@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { GameService } from '../game.service';
-import {MatDialog} from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
+import { OptionsComponent } from '../options/options.component';
+import { HeadingComponent } from '../heading/heading.component';
+
 
 
 @Component({
@@ -11,7 +14,7 @@ import {MatDialog} from '@angular/material/dialog';
 export class OptionsPopupProceedComponent implements OnInit {
   displayButton="Default Option";
 
-  constructor(private gameService: GameService, public dialog: MatDialog) {
+  constructor(private gameService: GameService, public dialog: MatDialog, private optionsComponent: OptionsComponent, private headingComponent: HeadingComponent) {
         if(this.gameService.optionStatus=="correct")
         {
            this.displayButton = "Find Remaining Error";
@@ -25,7 +28,6 @@ export class OptionsPopupProceedComponent implements OnInit {
         else if(this.gameService.optionStatus=="allcorrect")
         {
            this.displayButton = "Next Question";
-          //  this.gameService.questionId++;
         }
    }
 
@@ -36,6 +38,9 @@ export class OptionsPopupProceedComponent implements OnInit {
     if(this.gameService.optionStatus=="allcorrect")
     {
       this.gameService.questionId++;
+      this.optionsComponent.optionsCall();
+      this.headingComponent.titleCall();
+      console.log("call");
     }
   }
 
