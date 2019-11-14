@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { GameService } from '../game.service';
-import { Game } from '../models/game';
 import {MatDialog} from '@angular/material/dialog';
 
 @Component({
@@ -9,7 +8,7 @@ import {MatDialog} from '@angular/material/dialog';
   styleUrls: ['./options.component.css']
 })
 export class OptionsComponent implements OnInit {
-
+  index!: any;
   game;
   correct;
   correctOptionsLength;
@@ -27,21 +26,7 @@ export class OptionsComponent implements OnInit {
   optionFiveDistortion;
   optionSix;
   optionSixDistortion;
-  constructor(private gameService: GameService, public dialog: MatDialog) {
-    // console.log("constructor called");
-    // this.optionOne = this.gameService.optionOne;
-    // this.optionOneDistortion = this.gameService.optionOneDistortion;
-    // this.optionTwo = this.gameService.optionTwo;
-    // this.optionTwoDistortion = this.gameService.optionTwoDistortion;
-    // this.optionThree = this.gameService.optionThree;
-    // this.optionThreeDistortion = this.gameService.optionThreeDistortion;
-    // this.optionFour = this.gameService.optionFour;
-    // this.optionFourDistortion = this.gameService.optionFourDistortion;
-    // this.optionFive = this.gameService.optionFive;
-    // this.optionFiveDistortion = this.gameService.optionFiveDistortion;
-    // this.optionSix = this.gameService.optionSix;
-    // this.optionSixDistortion = this.gameService.optionSixDistortion;
-  }
+  constructor(private gameService: GameService, public dialog: MatDialog) {}
 
     openDialog() {
     const dialogRef = this.dialog.open(OptionPopupComponent, {
@@ -55,11 +40,10 @@ export class OptionsComponent implements OnInit {
    onOptionClick(item) {
      this.gameService.optionSelected = item.distortion;
      this.gameService.optionMessage = item.message;
-     this.gameService.correct.forEach(correctItem => {
+     this.correct.forEach(correctItem => {
       if(correctItem.id === item.id)
       {
         this.gameService.selectedCorrectOptionsSet.add(item.id);
-        this.gameService.selectedCorrectOptionsLength++;
         this.gameService.optionStatus = "correct";
         this.correctOptionFound=1;
         this.gameService.score+=10;
@@ -69,11 +53,10 @@ export class OptionsComponent implements OnInit {
     {
       this.gameService.optionStatus = "incorrect";
     }
-      
-    if(this.gameService.selectedCorrectOptionsLength === this.gameService.correct.length)
+
+    if(this.gameService.selectedCorrectOptionsSet.size === this.correct.length)
     {
       this.gameService.selectedCorrectOptionsSet.clear();
-      this.gameService.selectedCorrectOptionsLength = 0;
       this.gameService.optionStatus = "allcorrect";
     }
       this.openDialog();
@@ -81,33 +64,37 @@ export class OptionsComponent implements OnInit {
     }
    
   optionsCall() {
-    this.gameService.getGameData()
-    .subscribe((data) => 
-    {
-      this.game = data;
-      this.gameService.optionOne = this.game.results[this.gameService.questionId-1].options[0];
-      this.gameService.optionTwo = this.game.results[this.gameService.questionId-1].options[1];
-      this.gameService.optionThree = this.game.results[this.gameService.questionId-1].options[2];
-      this.gameService.optionFour = this.game.results[this.gameService.questionId-1].options[3];
-      this.gameService.optionFive = this.game.results[this.gameService.questionId-1].options[4];
-      this.gameService.optionSix = this.game.results[this.gameService.questionId-1].options[5];
-      this.gameService.optionOneDistortion = this.gameService.optionOne.distortion;
-      this.gameService.optionTwoDistortion = this.gameService.optionTwo.distortion;
-      this.gameService.optionThreeDistortion = this.gameService.optionThree.distortion;
-      this.gameService.optionFourDistortion = this.gameService.optionFour.distortion;
-      this.gameService.optionFiveDistortion = this.gameService.optionFive.distortion;
-      this.gameService.optionSixDistortion = this.gameService.optionSix.distortion;
-      this.gameService.correct = this.game.results[this.gameService.questionId-1].correct;
-    }  
-  );  
+    this.gameService.optionOne.subscribe((data) => {
+      this.optionOne = data;
+      this.optionOneDistortion = data.distortion;
+    });
+    this.gameService.optionTwo.subscribe((data) => {
+      this.optionTwo= data;
+      this.optionTwoDistortion = data.distortion;
+    });
+    this.gameService.optionThree.subscribe((data) => {
+      this.optionThree = data;
+      this.optionThreeDistortion = data.distortion;
+    });
+    this.gameService.optionFour.subscribe((data) => {
+      this.optionFour = data;
+      this.optionFourDistortion = data.distortion;
+    });
+    this.gameService.optionFive.subscribe((data) => {
+      this.optionFive = data;
+      this.optionFiveDistortion = data.distortion;
+    });
+    this.gameService.optionSix.subscribe((data) => {
+      this.optionSix = data;
+      this.optionSixDistortion = data.distortion;
+    });
+    this.gameService.correct.subscribe((data) => {
+      this.correct = data;
+    });
   }
-
   ngOnInit() {
     this.optionsCall();
-    console.log("ngoninit called");
-
-  }
-
+}
 }
 
 @Component({

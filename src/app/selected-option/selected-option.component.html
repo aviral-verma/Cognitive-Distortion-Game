@@ -3,10 +3,8 @@
   [class.correctOption]="this.gameService.optionStatus==='correct' || this.gameService.optionStatus==='allcorrect'"
   [class.incorrectOption]="this.gameService.optionStatus==='incorrect'"
   >
-  <!-- <img src="../../assets/images/icons/check-mark-black-outline.svg" alt="icon" style="float: left; padding-left: 10px; padding-top: 2px;"> -->
   <img *ngIf="this.gameService.optionStatus==='correct' || this.gameService.optionStatus==='allcorrect'" src="../../assets/images/icons/check-mark-black-outline.svg" alt="icon" style="float: left; padding-left: 10px; padding-top: 2px;">
     <img *ngIf="this.gameService.optionStatus==='incorrect'" src="../../assets/images/icons/incorrect.svg" alt="icon" style="float: left; padding-left: 10px; width: 15px; padding-top: 2px;">
-   {{this.optionSelected}}
+   {{gameService.optionSelected}}
   </button>
 </div>
-<!-- this.gameService.optionStatus -->
