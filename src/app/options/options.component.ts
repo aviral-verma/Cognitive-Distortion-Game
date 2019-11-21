@@ -2,6 +2,7 @@ import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { GameService } from '../game.service';
 import {MatDialog} from '@angular/material/dialog';
 import { DialogBoxService } from '../shared/custom-dialog/dialog-box.service';
+import { PopupComponent } from '../popup/popup.component';
 
 @Component({
   selector: 'app-options',
@@ -33,7 +34,7 @@ export class OptionsComponent implements OnInit {
   constructor(private gameService: GameService, public dialog: MatDialog, private dialogBoxService: DialogBoxService) {}
 
   openCustomDialog() {
-    this.dialogBoxService.setDialogChild(OptionPopupComponent);
+    this.dialogBoxService.setDialogChild(PopupComponent);
     const domEvent = new CustomEvent('overlayCalledEvent', { bubbles: true });
     this.element.nativeElement.dispatchEvent(domEvent);
   }
@@ -97,10 +98,3 @@ export class OptionsComponent implements OnInit {
     this.optionsCall();
 }
 }
-
-@Component({
-  selector: 'app-option-popup',
-  templateUrl: './option-popup.component.html',
-  styleUrls: ['./option-popup.component.css']
-})
-export class OptionPopupComponent{}
