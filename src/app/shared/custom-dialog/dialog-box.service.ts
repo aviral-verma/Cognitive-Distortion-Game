@@ -11,6 +11,7 @@ export class DialogBoxService {
 
   setDialogChild(component: any) {
     this.childComponent = component;
+    console.log('service called');
   }
 
   getDialogChild() {

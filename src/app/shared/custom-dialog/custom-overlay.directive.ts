@@ -17,6 +17,7 @@ export class CustomOverlayDirective {
   }
   @HostListener('window: overlayCalledEvent', ['$event.target'])
   createOverlayFun(el: any) {
+    console.log('directive called');
     if (this.overlayMade === false) {
       this.makeOverlay();
     } else {
