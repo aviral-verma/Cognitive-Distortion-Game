@@ -8,7 +8,6 @@ import { HeadingComponent } from './heading/heading.component';
 import { SituationComponent } from './situation/situation.component';
 import { NatComponent } from './nat/nat.component';
 import { OptionsComponent } from './options/options.component';
-import { OptionPopupComponent } from './options/options.component';
 import { OptionSolutionComponent } from './option-solution/option-solution.component';
 import { SelectedOptionComponent } from './selected-option/selected-option.component';
 import { SelectedOptionContentComponent } from './selected-option-content/selected-option-content.component';
@@ -24,11 +23,11 @@ import { DialogContainerComponent } from './shared/custom-dialog/dialog-containe
 import { DialogBoxService } from './shared/custom-dialog/dialog-box.service';
 import { DialogBoxChildDirective } from './shared/custom-dialog/dialog-container/dialog-box-child.directive';
 import { ScoreComponent } from './score/score.component';
+import { PopupComponent } from './popup/popup.component';
 
 const appRoutes: Routes = [
   { path: 'all-situations', component: AllSituationsComponent },
   { path: 'main', component: MainComponent },
-  { path: 'option-popup', component: OptionPopupComponent },
   
 
   { path: '',
@@ -45,7 +44,6 @@ const appRoutes: Routes = [
     SituationComponent,
     NatComponent,
     OptionsComponent,
-    OptionPopupComponent,
     OptionSolutionComponent,
     SelectedOptionComponent,
     SelectedOptionContentComponent,
@@ -55,7 +53,8 @@ const appRoutes: Routes = [
     DialogContainerComponent,
     CustomOverlayDirective,
     DialogBoxChildDirective,
-    ScoreComponent
+    ScoreComponent,
+    PopupComponent
   ],
   imports: [
     RouterModule.forRoot(
@@ -72,6 +71,7 @@ const appRoutes: Routes = [
   bootstrap: [AppComponent],
   entryComponents: [
     DialogContainerComponent,
+    PopupComponent
   ]
 })
 export class AppModule { }
