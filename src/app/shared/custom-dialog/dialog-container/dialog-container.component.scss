@@ -7,12 +7,10 @@
 .dialog-content{
     background-color: white;
     margin-top: -28rem;
-    // @include box-shadow-1-1-10-d6(); //copy the style.css of the mail project
-    // height: 60vh;
-    min-height: 200px;
-    max-height: 400px;
+    //changes made my Aviral
+    // min-height: 200px;
+    // max-height: 400px;
     overflow: auto;
-    // overflow: scroll;
 }
 
 @media only screen and (max-width: 767px) and (orientation:landscape){
