@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef } from '@angular/core';
 import { GameService } from '../game.service';
 import { MatDialog } from '@angular/material/dialog';
 
@@ -10,7 +10,7 @@ import { MatDialog } from '@angular/material/dialog';
 export class OptionsPopupProceedComponent implements OnInit {
   displayButton="Default Option";
 
-  constructor(private gameService: GameService, public dialog: MatDialog) {
+  constructor(private gameService: GameService, public dialog: MatDialog, private element: ElementRef) {
         if(this.gameService.optionStatus=="correct")
         this.displayButton = "Find Remaining Error";
         else if(this.gameService.optionStatus=="incorrect")
@@ -27,5 +27,7 @@ export class OptionsPopupProceedComponent implements OnInit {
       this.gameService.questionId++;
       this.gameService.serviceCall();
     }
+    const domEvent = new CustomEvent('removeOverlayEvent', { bubbles: true });
+    this.element.nativeElement.dispatchEvent(domEvent);
   }
 }

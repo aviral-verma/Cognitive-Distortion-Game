@@ -53,6 +53,7 @@ const appRoutes: Routes = [
     AllSituationsComponent,
     HomeComponent,
     DialogContainerComponent,
+    CustomOverlayDirective,
     DialogBoxChildDirective,
     ScoreComponent
   ],

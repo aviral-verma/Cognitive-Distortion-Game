@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { GameService } from '../game.service';
 import {MatDialog} from '@angular/material/dialog';
+import { DialogBoxService } from '../shared/custom-dialog/dialog-box.service';
 
 @Component({
   selector: 'app-options',
@@ -26,7 +27,10 @@ export class OptionsComponent implements OnInit {
   optionFiveDistortion;
   optionSix;
   optionSixDistortion;
-  constructor(private gameService: GameService, public dialog: MatDialog) {}
+  //new changes
+  @ViewChild('checkElement', {static: false}) element!: ElementRef;
+
+  constructor(private gameService: GameService, public dialog: MatDialog, private dialogBoxService: DialogBoxService) {}
 
     openDialog() {
     const dialogRef = this.dialog.open(OptionPopupComponent, {
@@ -35,6 +39,11 @@ export class OptionsComponent implements OnInit {
       height: '62vh',
       width: '90vw',
 });
+  }
+  openCustomDialog() {
+    this.dialogBoxService.setDialogChild(OptionPopupComponent);
+    const domEvent = new CustomEvent('overlayCalledEvent', { bubbles: true });
+    this.element.nativeElement.dispatchEvent(domEvent);
   }
 
    onOptionClick(item) {
@@ -59,7 +68,9 @@ export class OptionsComponent implements OnInit {
       this.gameService.selectedCorrectOptionsSet.clear();
       this.gameService.optionStatus = "allcorrect";
     }
-      this.openDialog();
+      // this.openDialog();
+      //new function
+      this.openCustomDialog();
       this.correctOptionFound = -1;
     }
    
