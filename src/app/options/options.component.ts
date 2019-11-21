@@ -41,7 +41,6 @@ export class OptionsComponent implements OnInit {
 });
   }
   openCustomDialog() {
-    console.log('open custom func');
     this.dialogBoxService.setDialogChild(OptionPopupComponent);
     const domEvent = new CustomEvent('overlayCalledEvent', { bubbles: true });
     this.element.nativeElement.dispatchEvent(domEvent);
