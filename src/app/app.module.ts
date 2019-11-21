@@ -26,7 +26,6 @@ import { ScoreComponent } from './score/score.component';
 import { PopupComponent } from './popup/popup.component';
 
 const appRoutes: Routes = [
-  { path: 'all-situations', component: AllSituationsComponent },
   { path: 'main', component: MainComponent },
   
 
