@@ -31,7 +31,6 @@ export class DialogContainerComponent implements OnInit, AfterViewInit, OnDestro
     } , 10);
   }
   insertComponent() {
-    console.log(this.dialogBox);
     this.viewContainerRef = this.dialogBox.viewContainerRef;
     const componentFactory = this.componentFactoryResolver.resolveComponentFactory(this.childComponent);
     const componentRef = this.viewContainerRef.createComponent(componentFactory);
